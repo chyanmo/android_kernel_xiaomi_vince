@@ -160,7 +160,7 @@ extern int audit_log_task_context(struct audit_buffer *ab);
 extern void audit_log_task_info(struct audit_buffer *ab,
 				struct task_struct *tsk);
 
-extern int		    audit_update_lsm_rules(void);
+// int		    audit_update_lsm_rules(void);
 
 				/* Private API (for audit.c only) */
 extern int audit_rule_change(int type, __u32 portid, int seq,
@@ -572,11 +572,11 @@ static inline bool audit_loginuid_set(struct task_struct *tsk)
 	return uid_valid(audit_get_loginuid(tsk));
 }
 
-inline int audit_update_lsm_rules(void)
+static inline int audit_update_lsm_rules(void)
 {
 	return 0;
 }
-#define audit_enabled 0
+// #define audit_enabled 0
 static inline void audit_log_string(struct audit_buffer *ab, const char *buf)
 {
 	audit_log_n_string(ab, buf, strlen(buf));
