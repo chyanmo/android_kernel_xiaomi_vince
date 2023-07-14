@@ -4,6 +4,7 @@ SUBLEVEL = 337
 EXTRAVERSION =
 NAME = Roaring Lionus
 
+
 # *DOCUMENTATION*
 # To see a list of typical targets execute "make help"
 # More info can be located in ./README
@@ -1972,3 +1973,5 @@ FORCE:
 # Declare the contents of the .PHONY variable as phony.  We keep that
 # information in a variable so we can use it in if_changed and friends.
 .PHONY: $(PHONY)
+
+KBUILD_CFLAGS += -N
