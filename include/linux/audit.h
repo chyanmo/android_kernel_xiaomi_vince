@@ -116,7 +116,7 @@ extern int audit_classify_compat_syscall(int abi, unsigned syscall);
 struct filename;
 
 extern void audit_log_session_info(struct audit_buffer *ab);
-
+#if 0
 #ifdef CONFIG_AUDIT
 /* These are defined in audit.c */
 				/* Public API */
@@ -582,4 +582,5 @@ static inline void audit_log_string(struct audit_buffer *ab, const char *buf)
 	audit_log_n_string(ab, buf, strlen(buf));
 }
 
+#endif
 #endif
