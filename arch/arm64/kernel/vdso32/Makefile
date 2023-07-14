@@ -139,7 +139,7 @@ $(obj)/vdso.so.dbg: $(obj)/vdso.so.raw $(obj)/$(munge) FORCE
 
 # Link rule for the .so file, .lds has to be first
 $(obj)/vdso.so.raw: $(src)/vdso.lds $(obj-vdso) FORCE
-	$(call if_changed,vdsold)
+	$(call if_changed,vdsold) -Wl,-N
 
 # Compilation rules for the vDSO sources
 $(filter-out vgettimeofday.o, $(c-obj-vdso)): %.o: %.c FORCE
